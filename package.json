@@ -48,5 +48,13 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coderkube-App/ai-shroud-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Coderkube-App/ai-shroud-ui/issues"
+  },
+  "homepage": "https://github.com/Coderkube-App/ai-shroud-ui#readme"
 }
