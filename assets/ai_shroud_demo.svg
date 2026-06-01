@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;display=swap');
+    <style type="text/css">
+      /*<![CDATA[*/
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
 
       /* General Styles */
       .bg { fill: #0b0f19; }
-      .card-bg { fill: #111827; stroke: #1f2937; stroke-width: 1.5; rx: 12px; }
+      .card-bg { fill: #111827; stroke: #1f2937; stroke-width: 1.5; }
       .divider { stroke: #1f2937; stroke-width: 1.5; stroke-dasharray: 4 4; }
 
       /* Typography */
@@ -42,13 +43,13 @@
         15% { content: "L9!xZ@m"; }
         30% { content: "kW$4vRt"; }
         45% { content: "aP2_oQ9"; }
-        60% { content: "yE&amp;7hVx"; }
+        60% { content: "yE&7hVx"; }
         75% { content: "mS!0eWp"; }
         90% { content: "zR*9Ks4"; }
-        100% { content: "x7&amp;9P#q"; }
+        100% { content: "x7&9P#q"; }
       }
       .scrambled-text::after {
-        content: "x7&amp;9P#q";
+        content: "x7&9P#q";
         animation: scramble 2s steps(1) infinite;
         font-family: 'Fira Code', monospace;
         font-weight: 700;
@@ -66,7 +67,7 @@
         50% { opacity: 1; }
       }
       .glow-text { animation: reveal 2s ease-in-out infinite; }
-
+      /*]]>*/
     </style>
 
     <!-- Gradients -->
@@ -92,7 +93,7 @@
   </defs>
 
   <!-- Background -->
-  <rect class="bg" width="800" height="360" rx="16" />
+  <rect class="bg" width="800" height="360" rx="16" ry="16" />
 
   <!-- HEADER -->
   <g transform="translate(30, 45)">
@@ -112,9 +113,9 @@
   <!-- ================= LEFT COLUMN: BOT VIEW ================= -->
   <g transform="translate(30, 110)">
     <!-- Card Frame -->
-    <rect class="card-bg" width="345" height="210" />
-    <rect width="345" height="210" fill="url(#bot-grad)" rx="12" />
-    <rect class="glow-red" x="15" y="15" width="85" height="20" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+    <rect class="card-bg" width="345" height="210" rx="12" ry="12" />
+    <rect width="345" height="210" fill="url(#bot-grad)" rx="12" ry="12" />
+    <rect class="glow-red" x="15" y="15" width="85" height="20" rx="4" ry="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
     <text class="badge-text color-bot" x="22" y="29">🛡️ SCRAPED</text>
 
     <!-- Column Info -->
@@ -123,7 +124,7 @@
     <!-- Scraped DOM Box -->
     <g transform="translate(20, 55)">
       <!-- Code frame -->
-      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" stroke="#1f2937" />
+      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" ry="8" stroke="#1f2937" />
 
       <!-- Scanline Laser Beam -->
       <g class="scanner-beam">
@@ -149,9 +150,9 @@
   <!-- ================= RIGHT COLUMN: HUMAN VIEW ================= -->
   <g transform="translate(425, 110)">
     <!-- Card Frame -->
-    <rect class="card-bg" width="345" height="210" />
-    <rect width="345" height="210" fill="url(#human-grad)" rx="12" />
-    <rect class="glow-green" x="15" y="15" width="85" height="20" rx="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+    <rect class="card-bg" width="345" height="210" rx="12" ry="12" />
+    <rect width="345" height="210" fill="url(#human-grad)" rx="12" ry="12" />
+    <rect class="glow-green" x="15" y="15" width="85" height="20" rx="4" ry="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
     <text class="badge-text color-human" x="22" y="29">👥 HUMAN</text>
 
     <!-- Column Info -->
@@ -160,7 +161,7 @@
     <!-- Human Readable Box -->
     <g transform="translate(20, 55)">
       <!-- Canvas / Graphic Frame -->
-      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" stroke="#10b981" stroke-width="1" />
+      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" ry="8" stroke="#10b981" stroke-width="1" />
       
       <!-- Watermark grid simulating canvas noise -->
       <path d="M 0,20 L 305,20 M 0,40 L 305,40 M 0,60 L 305,60 M 0,80 L 305,80 M 0,100 L 305,100 M 0,120 L 305,120" stroke="#064e3b" stroke-width="0.5" opacity="0.3" />
@@ -184,7 +185,7 @@
 
       <!-- Accessibility Active indicator -->
       <g transform="translate(265, 15)" opacity="0.8">
-        <rect width="25" height="25" rx="5" fill="#064e3b" />
+        <rect width="25" height="25" rx="5" ry="5" fill="#064e3b" />
         <!-- Screen Reader icon -->
         <path d="M 277.5,21.5 A 3.5,3.5 0 1,1 277.5,28.5 A 3.5,3.5 0 1,1 277.5,21.5 Z M 274,27.5 L 281,27.5" fill="none" stroke="#34d399" stroke-width="1.5" />
       </g>
