@@ -2,6 +2,14 @@
 
 Protect sensitive UI content from AI scrapers, bots, and OCR extraction.
 
+## 🎬 Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Coderkube-App/ai-shroud-ui/main/assets/ai_shroud_demo.svg" alt="AI Shroud UI Demo" width="800" />
+</p>
+
+---
+
 ## Installation
 
 ```bash

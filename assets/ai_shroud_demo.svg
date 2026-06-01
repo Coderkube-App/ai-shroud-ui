@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;family=Inter:wght@400;600;700&amp;display=swap');
+
+      /* General Styles */
+      .bg { fill: #0b0f19; }
+      .card-bg { fill: #111827; stroke: #1f2937; stroke-width: 1.5; rx: 12px; }
+      .divider { stroke: #1f2937; stroke-width: 1.5; stroke-dasharray: 4 4; }
+
+      /* Typography */
+      .title { font-family: 'Inter', system-ui, sans-serif; font-size: 18px; font-weight: 700; }
+      .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+      .code-font { font-family: 'Fira Code', 'Consolas', monospace; font-size: 14px; }
+      .badge-text { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+      /* Theme Colors */
+      .text-primary { fill: #f3f4f6; }
+      .text-muted { fill: #6b7280; }
+      .color-bot { fill: #ef4444; }
+      .color-human { fill: #10b981; }
+      .color-shield { fill: #3b82f6; }
+
+      /* Glow & Shadows */
+      .glow-green { filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)); }
+      .glow-red { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4)); }
+      .glow-blue { filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.5)); }
+
+      /* Keyframe Animations */
+      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+      .cursor { animation: blink 1s step-end infinite; }
+
+      @keyframes scanline {
+        0% { transform: translateY(0px); opacity: 0.3; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(140px); opacity: 0.3; }
+      }
+      .scanner-beam { animation: scanline 3s linear infinite; }
+
+      @keyframes scramble {
+        0% { content: "d8*F#qP"; }
+        15% { content: "L9!xZ@m"; }
+        30% { content: "kW$4vRt"; }
+        45% { content: "aP2_oQ9"; }
+        60% { content: "yE&amp;7hVx"; }
+        75% { content: "mS!0eWp"; }
+        90% { content: "zR*9Ks4"; }
+        100% { content: "x7&amp;9P#q"; }
+      }
+      .scrambled-text::after {
+        content: "x7&amp;9P#q";
+        animation: scramble 2s steps(1) infinite;
+        font-family: 'Fira Code', monospace;
+        font-weight: 700;
+        fill: #ef4444;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.03); opacity: 1; }
+      }
+      .shield-pulse { animation: pulse 2s ease-in-out infinite; transform-origin: 400px 75px; }
+
+      @keyframes reveal {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+      .glow-text { animation: reveal 2s ease-in-out infinite; }
+
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="bot-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="human-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="laser-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0" />
+      <stop offset="15%" stop-color="#ef4444" stop-opacity="1" />
+      <stop offset="50%" stop-color="#ef4444" stop-opacity="1" />
+      <stop offset="85%" stop-color="#ef4444" stop-opacity="1" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="360" rx="16" />
+
+  <!-- HEADER -->
+  <g transform="translate(30, 45)">
+    <text class="title text-primary" x="0" y="0">🤖 AI Shroud UI Demo</text>
+    <text class="text-muted" x="0" y="22" font-family="'Inter', sans-serif" font-size="14px">Adversarial defense protecting sensitive UI elements from scrapers &amp; OCR</text>
+  </g>
+
+  <!-- Central Shield Indicator -->
+  <g class="shield-pulse">
+    <circle class="color-shield glow-blue" cx="400" cy="55" r="22" fill="url(#shield-grad)" />
+    <!-- Lock Icon inside Shield -->
+    <path d="M395 53 V48 C395 45.2 397.2 43 400 43 C402.8 43 405 45.2 405 48 V53 M392 53 H408 V64 H392 Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+
+  <!-- TWO COMPARISON COLUMNS -->
+
+  <!-- ================= LEFT COLUMN: BOT VIEW ================= -->
+  <g transform="translate(30, 110)">
+    <!-- Card Frame -->
+    <rect class="card-bg" width="345" height="210" />
+    <rect width="345" height="210" fill="url(#bot-grad)" rx="12" />
+    <rect class="glow-red" x="15" y="15" width="85" height="20" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" />
+    <text class="badge-text color-bot" x="22" y="29">🛡️ SCRAPED</text>
+
+    <!-- Column Info -->
+    <text class="subtitle text-muted" x="115" y="29">AI Scraper / OCR View</text>
+
+    <!-- Scraped DOM Box -->
+    <g transform="translate(20, 55)">
+      <!-- Code frame -->
+      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" stroke="#1f2937" />
+
+      <!-- Scanline Laser Beam -->
+      <g class="scanner-beam">
+        <rect fill="url(#laser-grad)" x="5" y="0" width="295" height="2" />
+      </g>
+
+      <!-- Scrambled HTML tags -->
+      <text class="code-font text-muted" x="15" y="30">&lt;<tspan fill="#f43f5e">div</tspan> class=<tspan fill="#eab308">"sensitive"</tspan>&gt;</text>
+      
+      <!-- Protected text scrambled dynamically -->
+      <text class="code-font" x="30" y="60" fill="#ef4444" font-weight="bold">
+        SSN: <tspan class="scrambled-text"></tspan>
+      </text>
+
+      <text class="code-font" x="30" y="85" fill="#ef4444" font-weight="bold">
+        KEY: <tspan class="scrambled-text"></tspan>
+      </text>
+
+      <text class="code-font text-muted" x="15" y="115">&lt;/<tspan fill="#f43f5e">div</tspan>&gt;</text>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT COLUMN: HUMAN VIEW ================= -->
+  <g transform="translate(425, 110)">
+    <!-- Card Frame -->
+    <rect class="card-bg" width="345" height="210" />
+    <rect width="345" height="210" fill="url(#human-grad)" rx="12" />
+    <rect class="glow-green" x="15" y="15" width="85" height="20" rx="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+    <text class="badge-text color-human" x="22" y="29">👥 HUMAN</text>
+
+    <!-- Column Info -->
+    <text class="subtitle text-muted" x="115" y="29">Clean Render &amp; A11y</text>
+
+    <!-- Human Readable Box -->
+    <g transform="translate(20, 55)">
+      <!-- Canvas / Graphic Frame -->
+      <rect fill="#030712" x="0" y="0" width="305" height="135" rx="8" stroke="#10b981" stroke-width="1" />
+      
+      <!-- Watermark grid simulating canvas noise -->
+      <path d="M 0,20 L 305,20 M 0,40 L 305,40 M 0,60 L 305,60 M 0,80 L 305,80 M 0,100 L 305,100 M 0,120 L 305,120" stroke="#064e3b" stroke-width="0.5" opacity="0.3" />
+      <path d="M 40,0 L 40,135 M 80,0 L 80,135 M 120,0 L 120,135 M 160,0 L 160,135 M 200,0 L 200,135 M 240,0 L 240,135 M 280,0 L 280,135" stroke="#064e3b" stroke-width="0.5" opacity="0.3" />
+
+      <!-- Human Clean readable text (simulating noiseLevel background dots too) -->
+      <circle cx="50" cy="45" r="1" fill="#10b981" opacity="0.5" />
+      <circle cx="120" cy="55" r="1.5" fill="#10b981" opacity="0.4" />
+      <circle cx="180" cy="40" r="1" fill="#10b981" opacity="0.6" />
+      <circle cx="220" cy="65" r="1.5" fill="#10b981" opacity="0.5" />
+      <circle cx="70" cy="80" r="1" fill="#10b981" opacity="0.3" />
+      <circle cx="140" cy="75" r="1.5" fill="#10b981" opacity="0.4" />
+
+      <text class="code-font glow-text" x="25" y="55" fill="#34d399" font-weight="bold">
+        SSN: <tspan fill="#f3f4f6">***-**-6789</tspan>
+      </text>
+
+      <text class="code-font glow-text" x="25" y="85" fill="#34d399" font-weight="bold">
+        KEY: <tspan fill="#f3f4f6">sk_live_9a4f</tspan>
+      </text>
+
+      <!-- Accessibility Active indicator -->
+      <g transform="translate(265, 15)" opacity="0.8">
+        <rect width="25" height="25" rx="5" fill="#064e3b" />
+        <!-- Screen Reader icon -->
+        <path d="M 277.5,21.5 A 3.5,3.5 0 1,1 277.5,28.5 A 3.5,3.5 0 1,1 277.5,21.5 Z M 274,27.5 L 281,27.5" fill="none" stroke="#34d399" stroke-width="1.5" />
+      </g>
+      <text class="badge-text" x="200" y="30" fill="#059669" font-size="9px">♿ Screen Reader OK</text>
+    </g>
+  </g>
+</svg>
